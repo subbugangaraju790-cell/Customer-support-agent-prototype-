@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MemoryDesk</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <div class="brand">MemoryDesk</div>
+      <div class="subtitle">AI Customer Support · Persistent Customer Memory</div>
+    </div>
+    <div id="health" class="status-pill">
+      <span class="status-dot"></span>
+      Checking...
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="panel customers-panel">
+      <div class="panel-title">
+        <span>Customers</span>
+      </div>
+      <div id="customers" class="customer-list"></div>
+    </aside>
+
+    <section class="panel chat-panel">
+      <div class="chat-header">
+        <div>
+          <div id="customerName" class="section-title">Select a customer</div>
+          <div id="customerMeta" class="muted">No active session</div>
+        </div>
+        <button id="resetBtn" class="secondary-btn">Reset Session</button>
+      </div>
+
+      <div id="messages" class="messages">
+        <div class="empty-state">
+          Select a customer and send a support message.
+        </div>
+      </div>
+
+      <div class="composer">
+        <textarea
+          id="messageInput"
+          placeholder="Describe the customer's issue..."
+          rows="3"
+        ></textarea>
+        <button id="sendBtn" class="send-btn">Send</button>
+      </div>
+    </section>
+
+    <aside class="panel memory-panel">
+      <div class="memory-header">
+        <div class="panel-title">Customer Memory</div>
+        <label class="toggle">
+          <input type="checkbox" id="memoryToggle" checked />
+          <span class="slider"></span>
+          <span>Memory ON</span>
+        </label>
+      </div>
+
+      <div class="memory-count-card">
+        <span>Stored memories</span>
+        <strong id="memoryCount">0</strong>
+      </div>
+
+      <div class="trace">
+        <div class="trace-title">Memory Trace</div>
+        <div id="trace"></div>
+      </div>
+
+      <div class="retrieved">
+        <div class="trace-title">Retrieved Memories</div>
+        <div id="memories" class="memory-list">
+          <div class="muted">No memories retrieved yet.</div>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>
